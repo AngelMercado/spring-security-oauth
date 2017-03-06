@@ -10,8 +10,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 public class OAuth2ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
-
-        http.authorizeRequests().antMatchers("/employee").hasRole("ADMIN");
+        http.authorizeRequests().antMatchers("/employee").hasRole("ADMIN").and().csrf().disable();
 
     }
+
 }
